@@ -1,4 +1,4 @@
-import { Tab, tabLinks } from '~/components/Tab';
+import { Tab, tabLinks } from '~/components/Tabs/Tab';
 import { Tabs, tabsLinks } from '~/components/Tabs';
 
 export function links() {

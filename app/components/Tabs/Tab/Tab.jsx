@@ -1,6 +1,6 @@
 import styles from './Tab.css';
 
-import { Button } from '../Button';
+import { Button } from '../../Button';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
