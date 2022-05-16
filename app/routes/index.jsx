@@ -1,15 +1,18 @@
-import { Link } from '@remix-run/react';
-import { Button, buttonLinks } from '~/components/Button';
-import { Heading } from '~/components/Heading';
+import { Tab, tabLinks } from '~/components/Tab';
+import { Tabs, tabsLinks } from '~/components/Tabs';
 
-// export function links() {
-//   return [...buttonLinks()];
-// }
+export function links() {
+  return [...tabLinks(), ...tabsLinks()];
+}
 
 export default function Index() {
   return (
     <>
-      <h2>Hiiiiiiiiiiii</h2>
+      <Tabs>
+        <Tab selected>Overview</Tab>
+        <Tab>Structure</Tab>
+        <Tab>Geology</Tab>
+      </Tabs>
     </>
   );
 }

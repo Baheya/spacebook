@@ -1,0 +1,17 @@
+div[role='tablist'] {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.1px solid var(--grey-100);
+  border-bottom: 0.1px solid var(--grey-100);
+  position: relative;
+  padding: 0 3rem;
+}
+
+@media (min-width: 768px) {
+  div[role='tablist'] {
+    flex-direction: column;
+    gap: 2rem;
+    border: none;
+  }
+}
