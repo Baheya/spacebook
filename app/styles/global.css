@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+
+  --light: hsl(0, 0%, 100%);
+  --dark: hsl(240, 67%, 8%);
+  --grey-200: hsl(240, 17%, 16%);
+  --grey-100: hsl(240, 6%, 54%);
+  --turquoise: hsl(194, 48%, 49%);
+  --yellow: hsl(33, 82%, 61%);
+  --purple: hsl(263, 67%, 51%);
+  --rust: hsl(10, 63%, 51%);
+  --red: hsl(1, 68%, 53%);
+  --orange: hsl(17, 73%, 46%);
+  --mint: hsl(169, 73%, 44%);
+  --blue: hsl(222, 87%, 56%);
+}
+
+body {
+  line-height: 1.5;
+  font-family: 'League Spartan';
+  font-weight: 400;
+  background-color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@media (prefers-reduced-data: reduce) {
+  img,
+  video {
+    display: none;
+  }
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+     :focus {
+         transition: outline-offset .25s ease;
+     }
+
+     :focus:not(:active) {
+         outline-offset: 5px;
+     }
+ } */
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  margin: -1px;
+}

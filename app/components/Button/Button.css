@@ -1,0 +1,45 @@
+button.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
+}
+
+a.button {
+  text-decoration: none;
+}
+
+a.button,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1;
+
+  transition: 220ms all ease-in-out;
+}
+
+button.button:not(.icon-button),
+a.button:not(.icon-button) {
+  min-width: 10ch;
+  min-height: 44px;
+  padding: 0.25em 0.75em;
+}
+
+.icon-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.35em;
+}
+
+.icon-button__icon {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
