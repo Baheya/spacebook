@@ -1,0 +1,17 @@
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .stats {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .stats {
+    gap: 2rem;
+  }
+}
