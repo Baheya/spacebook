@@ -23,7 +23,7 @@ export default function Index() {
         <Tab>Geology</Tab>
       </Tabs>
       <Stats>
-        <StatCard label="Rotation Time" value="0.99" unit="day" />
+        <StatCard label="Rotation Time" value="0.99" unit="year" />
         <StatCard label="Radius" value="6371" unit="kilometer" />
         <StatCard label="Average Temp" value="16" unit="celsius" />
       </Stats>

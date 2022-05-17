@@ -66,10 +66,13 @@ button.button[aria-expanded='false'] ~ .navigation-list {
     display: none;
   }
 
-  .navigation-list {
+  button.button[aria-expanded='false'] ~ .navigation-list {
     flex-direction: row;
     gap: 2rem;
     position: static;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
