@@ -1,0 +1,48 @@
+.content {
+  text-align: center;
+  color: var(--light);
+  max-width: 350px;
+}
+
+.content h2 {
+  font-family: 'Antonio';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 52px;
+  text-transform: uppercase;
+
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 22px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    text-align: start;
+  }
+
+  .content h2 {
+    font-size: 48px;
+    line-height: 62px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content h2 {
+    font-size: 80px;
+    line-height: 104px;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
