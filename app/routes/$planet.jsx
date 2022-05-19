@@ -72,15 +72,16 @@ const getPlanetBySlug = gql`
       structure {
         content
         source
+        image {
+          url
+        }
       }
       surface {
         source
         content
-      }
-      images {
-        height
-        url
-        width
+        image {
+          url
+        }
       }
       statistics {
         name
@@ -129,14 +130,20 @@ export default function Index() {
           }
           structure={
             <Content>
-              <h2>{planet.name}</h2>
-              <p>{planet.structure[0].content}</p>
+              <img src={planet.structure[0].image.url} alt="" />
+              <div className="content-description">
+                <h2>{planet.name}</h2>
+                <p>{planet.structure[0].content}</p>
+              </div>
             </Content>
           }
           surface={
             <Content>
-              <h2>{planet.name}</h2>
-              <p>{planet.surface[0].content}</p>
+              <img src={planet.surface[0].image.url} alt="" />
+              <div className="content-description">
+                <h2>{planet.name}</h2>
+                <p>{planet.surface[0].content}</p>
+              </div>
             </Content>
           }
         />
