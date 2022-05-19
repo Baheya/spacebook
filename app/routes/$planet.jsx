@@ -28,7 +28,7 @@ export let loader = async ({ params }) => {
     slug: params.planet,
   });
 
-  return json({ planet, property: params.property });
+  return json({ planet });
 };
 
 export function links() {
@@ -41,28 +41,14 @@ export function links() {
 }
 
 export default function Index() {
-  let { planet, property } = useLoaderData();
+  let { planet } = useLoaderData();
 
   return (
     <main>
       <section>
         <Tabs
-          active={property}
-          // overview={
-          //   <TabContent name={planet.name} content={planet.overview[0]} />
-          // }
           overview={<Outlet />}
-          // structure={
-          //   <TabContent name={planet.name} content={planet.structure[0]} />
-          // }
           structure={<Outlet />}
-          // surface={
-          //   <TabContent
-          //     name={planet.name}
-          //     image={planet.overview[0].image.url}
-          //     content={planet.surface[0]}
-          //   />
-          // }
           surface={<Outlet />}
         />
         <Stats statistics={planet.statistics} />

@@ -1,25 +1,28 @@
 /* eslint-disable react/display-name */
 import * as TabsComponent from '@radix-ui/react-tabs';
-import { Link } from '@remix-run/react';
+import { Link, useLocation } from '@remix-run/react';
 import styles from './Tabs.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
 
-export function Tabs({
-  overview,
-  structure,
-  surface,
-  color = '#EDA249',
-  active,
-}) {
+export function Tabs({ overview, structure, surface, color = '#EDA249' }) {
+  const [activeTab, setActiveTab] = useState('overview');
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const activeParams = pathname.split('/');
+    const activeParam = activeParams[2];
+
+    setActiveTab(activeParam);
+  }, [pathname]);
+
   return (
     <TabsComponent.Root
-      defaultValue="overview"
-      value={active}
-      onValueChange={(value) => {}}
+      value={activeTab}
+      onValueChange={(value) => setActiveTab(value)}
       className="tabs-root"
       style={{
         '--gridRow': '500px',
