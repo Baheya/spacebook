@@ -1,6 +1,6 @@
 import { Tabs, tabsLinks } from '~/components/Tabs';
 import { Stats, statsLinks } from '~/components/Stats';
-import { Content, contentLinks } from '~/components/Content';
+import { TabContent, tabContentLinks } from '~/components/Tabs/TabContent';
 import { gql } from 'graphql-request';
 import { client } from '../client';
 import { json } from '@remix-run/node';
@@ -56,7 +56,7 @@ export function links() {
   return [
     ...tabsLinks(),
     ...statsLinks(),
-    ...contentLinks(),
+    ...tabContentLinks(),
     { rel: 'stylesheet', href: styles },
   ];
 }
@@ -68,12 +68,14 @@ export default function Index() {
     <main>
       <section>
         <Tabs
-          overview={<Content name={planet.name} content={planet.overview[0]} />}
+          overview={
+            <TabContent name={planet.name} content={planet.overview[0]} />
+          }
           structure={
-            <Content name={planet.name} content={planet.structure[0]} />
+            <TabContent name={planet.name} content={planet.structure[0]} />
           }
           surface={
-            <Content
+            <TabContent
               name={planet.name}
               image={planet.overview[0].image.url}
               content={planet.surface[0]}

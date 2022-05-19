@@ -1,5 +1,5 @@
-import { Link } from '@remix-run/react';
-import { useState } from 'react';
+import { Link, useLocation } from '@remix-run/react';
+import { useState, useEffect } from 'react';
 
 import { Button, buttonLinks } from '../Button';
 import { NavigationItem, navigationItemLinks } from './NavigationItem';
@@ -18,6 +18,13 @@ export function links() {
 
 export function Header() {
   const [visible, setVisible] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (visible) {
+      setVisible(false);
+    }
+  }, [pathname]);
 
   return (
     <header>

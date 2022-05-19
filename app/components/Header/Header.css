@@ -3,8 +3,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  align-items: center;
   height: var(--height);
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem;
   margin-inline: auto;
   position: relative;
   border-bottom: 0.1px solid var(--grey-100);
