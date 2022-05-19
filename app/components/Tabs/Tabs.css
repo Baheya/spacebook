@@ -25,13 +25,13 @@ div[role='tablist'] {
     border: none;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    padding: 0 48px;
   }
 }
 
 @media (min-width: 1024px) {
   .tabs-root {
     grid-template-columns: 60% 40%;
-    padding-inline: 160px;
   }
   div[role='tabpanel'] {
     grid-column: 1 / -1;

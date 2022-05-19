@@ -1,0 +1,20 @@
+main > section > div.stats {
+  margin-inline: 24px;
+}
+
+@media (min-width: 768px) {
+  main > section > div.stats {
+    margin-inline: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main > section {
+    padding-inline: 160px;
+  }
+
+  main > section > div.stats {
+    margin-inline: 0;
+    margin-block: 2rem;
+  }
+}

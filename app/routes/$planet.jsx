@@ -9,6 +9,8 @@ import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { Source, sourceLinks } from '~/components/Source';
 
+import styles from '../styles/planet.css';
+
 const example = {
   name: 'Mercury',
   slug: 'mercury',
@@ -101,10 +103,10 @@ export function links() {
   return [
     ...tabLinks(),
     ...tabsLinks(),
-    ...statCardLinks(),
     ...statsLinks(),
     ...contentLinks(),
     ...sourceLinks(),
+    { rel: 'stylesheet', href: styles },
   ];
 }
 
@@ -138,6 +140,7 @@ export default function Index() {
             </Content>
           }
         />
+        <Stats statistics={planet.statistics} />
       </section>
     </main>
   );
