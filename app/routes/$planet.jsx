@@ -72,7 +72,13 @@ export default function Index() {
           structure={
             <Content name={planet.name} content={planet.structure[0]} />
           }
-          surface={<Content name={planet.name} content={planet.surface[0]} />}
+          surface={
+            <Content
+              name={planet.name}
+              image={planet.overview[0].image.url}
+              content={planet.surface[0]}
+            />
+          }
         />
         <Stats statistics={planet.statistics} />
       </section>
