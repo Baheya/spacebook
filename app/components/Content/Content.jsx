@@ -5,5 +5,5 @@ export function links() {
 }
 
 export function Content({ children }) {
-  return <div className="content">{children}</div>;
+  return <article className="content">{children}</article>;
 }

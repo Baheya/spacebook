@@ -31,6 +31,7 @@ body {
   font-family: 'League Spartan';
   font-weight: 400;
   background-color: var(--dark);
+  background-image: url('/images/background-stars.svg');
   -webkit-font-smoothing: antialiased;
 }
 

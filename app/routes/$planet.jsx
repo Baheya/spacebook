@@ -7,6 +7,7 @@ import { gql } from 'graphql-request';
 import { client } from '../client';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import { Source, sourceLinks } from '~/components/Source';
 
 const example = {
   name: 'Mercury',
@@ -62,6 +63,9 @@ const getPlanetBySlug = gql`
       overview {
         content
         source
+        image {
+          url
+        }
       }
       structure {
         content
@@ -100,6 +104,7 @@ export function links() {
     ...statCardLinks(),
     ...statsLinks(),
     ...contentLinks(),
+    ...sourceLinks(),
   ];
 }
 
@@ -107,26 +112,33 @@ export default function Index() {
   let { planet } = useLoaderData();
 
   return (
-    <>
-      <Tabs>
-        <Tab selected>Overview</Tab>
-        <Tab>Structure</Tab>
-        <Tab>Geology</Tab>
-      </Tabs>
-      <Stats>
-        <StatCard label="Rotation Time" value="0.99" unit="year" />
-        <StatCard label="Radius" value="6371" unit="kilometer" />
-        <StatCard label="Average Temp" value="16" unit="celsius" />
-      </Stats>
-      <Content>
-        <h2>Venus</h2>
-        <p>
-          Third planet from the Sun and the only known planet to harbor life.
-          About 29.2% of Earth's surface is land with remaining 70.8% is covered
-          with water. Earth's distance from the Sun, physical properties and
-          geological history have allowed life to evolve and thrive.
-        </p>
-      </Content>
-    </>
+    <main>
+      <section>
+        <Tabs
+          overview={
+            <Content>
+              <img src={planet.overview[0].image.url} alt="" />
+              <div className="content-description">
+                <h2>{planet.name}</h2>
+                <p>{planet.overview[0].content}</p>
+              </div>
+              <Source link={planet.overview[0].source} />
+            </Content>
+          }
+          structure={
+            <Content>
+              <h2>{planet.name}</h2>
+              <p>{planet.structure[0].content}</p>
+            </Content>
+          }
+          surface={
+            <Content>
+              <h2>{planet.name}</h2>
+              <p>{planet.surface[0].content}</p>
+            </Content>
+          }
+        />
+      </section>
+    </main>
   );
 }
