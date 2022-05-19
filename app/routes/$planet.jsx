@@ -4,7 +4,7 @@ import { TabContent, tabContentLinks } from '~/components/Tabs/TabContent';
 import { gql } from 'graphql-request';
 import { client } from '../client';
 import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData, Outlet, useMatches } from '@remix-run/react';
 
 import styles from '../styles/planet.css';
 
@@ -14,27 +14,6 @@ const getPlanetBySlug = gql`
       name
       slug
 
-      overview {
-        content
-        source
-        image {
-          url
-        }
-      }
-      structure {
-        content
-        source
-        image {
-          url
-        }
-      }
-      surface {
-        source
-        content
-        image {
-          url
-        }
-      }
       statistics {
         name
         unit
@@ -68,19 +47,9 @@ export default function Index() {
     <main>
       <section>
         <Tabs
-          overview={
-            <TabContent name={planet.name} content={planet.overview[0]} />
-          }
-          structure={
-            <TabContent name={planet.name} content={planet.structure[0]} />
-          }
-          surface={
-            <TabContent
-              name={planet.name}
-              image={planet.overview[0].image.url}
-              content={planet.surface[0]}
-            />
-          }
+          overview={<Outlet />}
+          structure={<Outlet />}
+          surface={<Outlet />}
         />
         <Stats statistics={planet.statistics} />
       </section>
