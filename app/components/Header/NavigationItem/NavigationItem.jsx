@@ -13,7 +13,7 @@ export function NavigationItem({ name, color, path }) {
         className={({ isActive }) =>
           isActive ? 'navigation-link active' : 'navigation-link'
         }
-        to={path}
+        to={`${path}/overview`}
         style={{ '--backgroundColor': color }}
       >
         {name}

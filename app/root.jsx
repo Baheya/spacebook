@@ -27,7 +27,7 @@ export const meta = () => ({
 
 export const loader = ({ params }) => {
   if (!params.planet) {
-    throw redirect('/mercury');
+    throw redirect('/mercury/overview');
   }
   return null;
 };

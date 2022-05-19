@@ -1,15 +1,25 @@
 /* eslint-disable react/display-name */
 import * as TabsComponent from '@radix-ui/react-tabs';
+import { Link } from '@remix-run/react';
 import styles from './Tabs.css';
+import { useState } from 'react';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
 
-export function Tabs({ overview, structure, surface, color = '#EDA249' }) {
+export function Tabs({
+  overview,
+  structure,
+  surface,
+  color = '#EDA249',
+  active,
+}) {
   return (
     <TabsComponent.Root
-      defaultValue="Overview"
+      defaultValue="overview"
+      value={active}
+      onValueChange={(value) => {}}
       className="tabs-root"
       style={{
         '--gridRow': '500px',
@@ -19,29 +29,38 @@ export function Tabs({ overview, structure, surface, color = '#EDA249' }) {
     >
       <TabsComponent.List>
         <TabsComponent.Trigger
-          value="Overview"
+          asChild
+          value="overview"
           style={{ '--backgroundColor': color }}
         >
-          <span>1</span> Overview
+          <Link to="overview">
+            <span>1</span> Overview
+          </Link>
         </TabsComponent.Trigger>
         <TabsComponent.Trigger
-          value="Structure"
+          asChild
+          value="structure"
           style={{ '--backgroundColor': color }}
         >
-          <span>2</span> Structure
+          <Link to="structure">
+            <span>2</span> Structure
+          </Link>
         </TabsComponent.Trigger>
         <TabsComponent.Trigger
-          value="Surface"
+          asChild
+          value="surface"
           style={{ '--backgroundColor': color }}
         >
-          <span>3</span> Surface
+          <Link to="surface">
+            <span>3</span> Surface
+          </Link>
         </TabsComponent.Trigger>
       </TabsComponent.List>
-      <TabsComponent.Content value="Overview">{overview}</TabsComponent.Content>
-      <TabsComponent.Content value="Structure">
+      <TabsComponent.Content value="overview">{overview}</TabsComponent.Content>
+      <TabsComponent.Content value="structure">
         {structure}
       </TabsComponent.Content>
-      <TabsComponent.Content value="Surface">{surface}</TabsComponent.Content>
+      <TabsComponent.Content value="surface">{surface}</TabsComponent.Content>
     </TabsComponent.Root>
   );
 }
