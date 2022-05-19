@@ -1,13 +1,21 @@
+import { StatCard, statCardLinks } from './StatCard';
 import styles from './Stats.css';
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [...statCardLinks(), { rel: 'stylesheet', href: styles }];
 }
 
-export function Stats({children}) {
+export function Stats({ statistics }) {
   return (
     <div className="stats">
-      {children}
+      {statistics.map((stat) => (
+        <StatCard
+          key={stat.value}
+          label={stat.name}
+          unit={stat.unit}
+          value={stat.value}
+        />
+      ))}
     </div>
-  )
+  );
 }
