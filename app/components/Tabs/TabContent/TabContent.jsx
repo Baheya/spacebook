@@ -16,7 +16,7 @@ export function TabContent({ name, content, image }) {
         />
         {image ? (
           <img
-            className="content-image-magnified"
+            className="content-image--magnified"
             src={content.image.url}
             alt=""
           />
