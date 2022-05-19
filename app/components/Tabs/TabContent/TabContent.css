@@ -14,9 +14,10 @@
 .content .content-image {
   margin-inline: auto;
   margin-block: 2rem;
+  aspect-ratio: 1;
 }
 
-.content .content-image-magnified {
+.content .content-image--magnified {
   position: absolute;
   inset: 0;
   max-width: 150px;
