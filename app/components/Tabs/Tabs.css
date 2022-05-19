@@ -50,7 +50,7 @@ button[role='tab'] span {
   .tabs-root {
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: 450px 1fr;
+    grid-template-rows: var(--gridRow) 1fr;
     align-items: center;
   }
   div[role='tabpanel'] {
@@ -99,7 +99,8 @@ button[role='tab'] span {
 
 @media (min-width: 1024px) {
   .tabs-root {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: var(--gridColumn);
+    grid-template-rows: var(--gridRowDesktop) 1fr;
   }
   div[role='tabpanel'] {
     grid-column: 1 / -1;

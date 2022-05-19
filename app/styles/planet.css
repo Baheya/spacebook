@@ -1,8 +1,13 @@
-main > section > div.stats {
-  margin-inline: 24px;
+main > section {
+  padding-block-end: 2rem;
 }
 
-@media (min-width: 768px) {
+main > section > div.stats {
+  margin-inline: 24px;
+  margin-block: 1.5rem;
+}
+
+main > section @media (min-width: 768px) {
   main > section > div.stats {
     margin-inline: 48px;
   }

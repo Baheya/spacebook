@@ -1,11 +1,11 @@
-import { Source, sourceLinks } from '../Source';
-import styles from './Content.css';
+import { Source, sourceLinks } from './Source';
+import styles from './TabContent.css';
 
 export function links() {
   return [...sourceLinks(), { rel: 'stylesheet', href: styles }];
 }
 
-export function Content({ name, content, image }) {
+export function TabContent({ name, content, image }) {
   return (
     <article className="content">
       <div className="content-image-wrapper">

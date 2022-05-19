@@ -8,7 +8,15 @@ export function links() {
 
 export function Tabs({ overview, structure, surface, color = '#EDA249' }) {
   return (
-    <TabsComponent.Root defaultValue="Overview" className="tabs-root">
+    <TabsComponent.Root
+      defaultValue="Overview"
+      className="tabs-root"
+      style={{
+        '--gridRow': '500px',
+        '--gridRowDesktop': '400px',
+        '--gridColumn': '60% 40%',
+      }}
+    >
       <TabsComponent.List>
         <TabsComponent.Trigger
           value="Overview"
