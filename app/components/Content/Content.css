@@ -14,7 +14,7 @@
   font-family: 'Antonio';
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: var(--40px);
   line-height: 52px;
   text-transform: uppercase;
 
@@ -25,7 +25,7 @@
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 400;
-  font-size: 11px;
+  font-size: var(--11px);
   line-height: 22px;
 }
 
@@ -45,7 +45,7 @@
   }
 
   .content h2 {
-    font-size: 48px;
+    font-size: var(--48px);
     line-height: 62px;
     margin-bottom: 1.5rem;
   }
@@ -82,13 +82,13 @@
     align-self: flex-end;
   }
   .content h2 {
-    font-size: 80px;
+    font-size: var(--80px);
     line-height: 104px;
   }
 
   .content p,
   .content .source {
-    font-size: 14px;
+    font-size: var(--14px);
     line-height: 25px;
   }
 }

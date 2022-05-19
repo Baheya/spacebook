@@ -9,7 +9,7 @@
 .stat-card h3 {
   color: var(--grey-100);
   font-family: 'League Spartan';
-  font-size: 8px;
+  font-size: var(--8px);
   line-height: 16px;
   letter-spacing: 0.727273px;
   text-transform: uppercase;
@@ -20,7 +20,7 @@
   font-family: 'Antonio';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--20px);
   line-height: 26px;
   letter-spacing: -0.75px;
   text-transform: uppercase;
@@ -35,11 +35,11 @@
 
 @media (min-width: 1024px) {
   .stat-card h3 {
-    font-size: 11px;
+    font-size: var(--11px);
   }
 
   .stat-card p {
-    font-size: 40px;
+    font-size: var(--40px);
     line-height: 52px;
     letter-spacing: -1.5px;
   }

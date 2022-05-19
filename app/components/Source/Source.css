@@ -1,7 +1,7 @@
 .source a,
 .source span {
   font-family: 'League Spartan';
-  font-size: 12px;
+  font-size: var(--12px);
   line-height: 25px;
   color: var(--light);
   opacity: 0.75;
@@ -29,7 +29,7 @@
 
 @media (min-width: 1024px) {
   .source {
-    font-size: 14px;
+    font-size: var(--14px);
     line-height: 25px;
   }
 }
