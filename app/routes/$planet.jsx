@@ -40,6 +40,14 @@ export function links() {
   ];
 }
 
+export function meta({ data }) {
+  return {
+    title: `Spacebook | ${data.planet.name}`,
+    description:
+      'A treasure trove of nebulous information on your favorite planets. Pluto not included. ',
+  };
+}
+
 export default function Index() {
   let { planet } = useLoaderData();
 
