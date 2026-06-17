@@ -1,34 +1,20 @@
-# Welcome to Remix!
+# spacebook
 
-- [Remix Docs](https://remix.run/docs)
+A planet encyclopedia built with Remix and React, based on a design challenge from [Frontend Mentor](https://www.frontendmentor.io/). Each planet in the solar system has its own page with facts covering its overview, internal structure, and surface geology.
 
-## Deployment
+**Live demo:** [space-book.vercel.app](https://space-book.vercel.app)
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+## What it is
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+Spacebook is a Frontend Mentor challenge implementation, used as a hands-on exercise in building a multi-page Remix application with client-side navigation and CSS layout. The design spec was provided by Frontend Mentor; the implementation is original.
 
-```sh
-npm i -g vercel
-vercel
-```
+## Tech stack
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+- **[Remix](https://remix.run/)** — server-side rendering and file-based routing, deployed via the Vercel adapter
+- **[React](https://react.dev/)** — UI components
+- **[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)** — custom styling, no CSS framework
+- **[Vercel](https://vercel.com/)** — deployment and hosting
 
-## Development
+## Context
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
-
-```sh
-npm install
-```
-
-Afterwards, start the Remix development server like so:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+This project was built as a Frontend Mentor challenge, primarily to practise working with Remix's file-based routing system and to implement a visually detailed multi-page layout in plain CSS. The original design can be found on the [Frontend Mentor website](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f).
